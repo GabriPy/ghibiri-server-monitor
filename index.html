@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" />
+
+    <title>Ghibiri Server Monitor</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#344E41] dark group/design-root overflow-x-hidden"
+        style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#588157] px-10 py-3">
+                <div class="flex items-center gap-4 text-[#DAD7CD]">
+                    <h2 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em]">Ghibiri Server
+                        Monitor</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Dashboard</a>
+                        <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Logs</a> -->
+                        <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Settings</a> -->
+                    </div>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmTYAhPhXqH3TIR0ZCHJ61wHeNPMVfEIKMURhSoE5GQEVHfGxTF5D3y3WGea18oaEAFxgX6ieeZvJLYTCij6U0BFvd2qVuiCAptuKJTY40V-r6fL5_JcDuoQytcZ_aAXBi8nGm1Xbf6t6We3l1CosmRoQIu_pWxo8mIW48jG4SgI-UM1owUHNnUkREVm8PN2P9ugYFXroz7PZauqNGPSUi2k3fc76jit8st8WcYdJUwKqRfyy5w1mc3W3wct29OG5KHWDB9q4tAGg");'>
+                    </div>
+                </div>
+            </header>
+            <div class="px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <div class="flex flex-wrap justify-between gap-3 p-4">
+                        <div class="flex min-w-72 flex-col gap-3">
+                            <p class="text-[#DAD7CD] tracking-light text-[32px] font-bold leading-tight">Server
+                                Dashboard
+                            </p>
+                            <p class="text-[#A3B18A] text-sm font-normal leading-normal">Monitor your server's
+                                performance and status in real-time.</p>
+                        </div>
+                    </div>
+                    <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">System
+                        Overview</h3>
+                    <div class="flex flex-wrap gap-4 p-4">
+                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Disk Usage</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">75%</p>
+                        </div>
+                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Processor Temperature</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">68°C</p>
+                        </div>
+                    </div>
+                    <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Network
+                        Status</h3>
+                    <div class="flex flex-wrap gap-4 p-4">
+                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Wi-Fi Connection</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">Connected</p>
+                        </div>
+                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Open Ports</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">12</p>
+                        </div>
+                    </div>
+                    <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Performance Metrics</h3>
+                    <div class="flex flex-wrap gap-4 p-4">
+                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">RAM Usage</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">60%</p>
+                        </div>
+                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">CPU Usage</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">45%</p>
+                        </div>
+                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Bandwidth Usage</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">150 Mbps / 50 Mbps
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
