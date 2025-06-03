@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import psutil
 import platform
 import os
@@ -7,6 +8,7 @@ import time
 psutil.cpu_percent(interval=None)
 
 app = Flask(__name__)
+CORS(app, origins=["http://localhost:4999"])
 
 
 def format_uptime(seconds):
