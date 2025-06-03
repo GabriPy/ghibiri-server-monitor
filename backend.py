@@ -8,7 +8,7 @@ import time
 psutil.cpu_percent(interval=None)
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:4999"])
+CORS(app)
 
 
 def format_uptime(seconds):
