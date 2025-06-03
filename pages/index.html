@@ -92,18 +92,18 @@
     </div>
     <script>
         function updateStats() {
-            fetch("localhost:5000/api/system")
+            fetch("http://localhost:5000/api/system")
                 .then(res => res.json())
                 .then(data => {
                     document.getElementById("diskusage").textContent = `${data.disk.percent}%`;
-                    document.getElementById("cputemp").textContent = `${data.cpu_percent}%`;
+                    document.getElementById("cputemp").textContent = `${data.cpu_temp}%`;
 
                     document.getElementById("ramusage").textContent = `${data.memory.percent}%`;
                     document.getElementById("cpuusage").textContent = `${data.cpu_percent}%`;
-                    document.getElementById("uptime").textContent = `${data.uptime}%`;
+                    document.getElementById("uptime").textContent = `${data.uptime}`;
 
-                    document.getElementById("ossystem").textContent = `${data.os}%`;
-                    document.getElementById("hostname").textContent = `${data.hostname}%`;
+                    document.getElementById("ossystem").textContent = `${data.os}`;
+                    document.getElementById("hostname").textContent = `${data.hostname}`;
                 });
         }
 
