@@ -51,12 +51,11 @@
                     <div class="flex flex-wrap gap-4 p-4">
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal">Uso del disco</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="diskusage">75%</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="diskusage">N/N</p>
                         </div>
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Temperatura del processore
-                            </p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="cputemp">68°C</p>
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Temperatura del processore</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="cputemp">N/N</p>
                         </div>
                     </div>
                     <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
@@ -64,16 +63,15 @@
                     <div class="flex flex-wrap gap-4 p-4">
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal">Uso RAM</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">60%</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">N/N</p>
                         </div>
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal">Uso CPU</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">45%</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">N/N</p>
                         </div>
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal">Tempo ultimo avvio</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="uptime">2 giorni
-                            </p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="uptime">N/N</p>
                         </div>
                     </div>
                     <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
@@ -81,11 +79,11 @@
                     <div class="flex flex-wrap gap-4 p-4">
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal">Sistema operativo</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ossystem">Uburdu</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ossystem">N/N</p>
                         </div>
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal">Hostname</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="hostname">gayuser</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="hostname">N/N</p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +92,7 @@
     </div>
     <script>
         function updateStats() {
-            fetch("/api/system")
+            fetch("localhost:5000/api/system")
                 .then(res => res.json())
                 .then(data => {
                     document.getElementById("diskusage").textContent = `${data.disk.percent}%`;
