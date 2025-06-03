@@ -1,6 +1,6 @@
 from flask import Flask, send_from_directory
 
-app = Flask(__name__, static_folder='frontend_build')
+app = Flask(__name__, static_folder='pages')
 
 @app.route('/')
 def serve_index():
