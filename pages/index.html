@@ -92,7 +92,7 @@
     </div>
     <script>
         function updateStats() {
-            fetch("http://localhost:5000/api/system")
+            fetch("http://192.168.1.70:5000/api/system")
                 .then(res => res.json())
                 .then(data => {
                     document.getElementById("diskusage").textContent = `${data.disk.percent}%`;
