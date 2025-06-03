@@ -51,20 +51,12 @@
                     <div class="flex flex-wrap gap-4 p-4">
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal">Uso del disco</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">75%</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="diskusage">75%</p>
                         </div>
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal">Temperatura del processore
                             </p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">68°C</p>
-                        </div>
-                    </div>
-                    <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
-                        Connessione internet</h3>
-                    <div class="flex flex-wrap gap-4 p-4">
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Connessione Wi-Fi</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">Connected</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="cputemp">68°C</p>
                         </div>
                     </div>
                     <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
@@ -79,9 +71,21 @@
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">45%</p>
                         </div>
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Uso banda internet</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight">150 Mbps / 50 Mbps
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Tempo ultimo avvio</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="uptime">2 giorni
                             </p>
+                        </div>
+                    </div>
+                    <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Statistiche Software</h3>
+                    <div class="flex flex-wrap gap-4 p-4">
+                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Sistema operativo</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ossystem">Uburdu</p>
+                        </div>
+                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Hostname</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="hostname">gayuser</p>
                         </div>
                     </div>
                 </div>
@@ -89,12 +93,25 @@
         </div>
     </div>
     <script>
-        fetch("http://localhost:5000/api/system")
-            .then(res => res.json())
-            .then(data => {
-                console.log("Dati di sistema:", data);
-                // Qui aggiorna la DOM come vuoi
-            });
+        function updateStats() {
+            fetch("/api/system")
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("diskusage").textContent = `${data.disk.percent}%`;
+                    document.getElementById("cputemp").textContent = `${data.cpu_percent}%`;
+
+                    document.getElementById("ramusage").textContent = `${data.memory.percent}%`;
+                    document.getElementById("cpuusage").textContent = `${data.cpu_percent}%`;
+                    document.getElementById("uptime").textContent = `${data.uptime}%`;
+
+                    document.getElementById("ossystem").textContent = `${data.os}%`;
+                    document.getElementById("hostname").textContent = `${data.hostname}%`;
+                });
+        }
+
+        setInterval(updateStats, 1000);
+        updateStats(); // chiama subito una volta
+
 
     </script>
 </body>
