@@ -1,6 +1,10 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+
 import psutil
+import socket
+import requests
+
 import platform
 import os
 import time
@@ -21,7 +25,7 @@ def format_uptime(seconds):
 
 def get_system_info():
     try:
-        temps = (psutil.sensors_temperatures(),)
+        temps = psutil.sensors_temperatures()
         cpu_temp = temps["coretemp"][0].current if "coretemp" in temps else None
     except Exception:
         cpu_temp = None
@@ -37,6 +41,8 @@ def get_system_info():
         "load_avg": os.getloadavg(),
         "uptime": format_uptime(psutil.boot_time()),
         "cpu_temp": cpu_temp,
+        "ip_interno": socket.gethostbyname(socket.gethostname()),
+        "ip_esterno": requests.get('https://api.ipify.org').text,
     }
 
 
