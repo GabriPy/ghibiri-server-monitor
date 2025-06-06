@@ -1,56 +1,65 @@
 <html>
 
 <head>
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- FONT GSTATIC -->
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
-        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" />
 
+    <!-- TITOLO PAGINA -->
     <title>Ghibiri Server Monitor</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- STYLES.CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- UPDATESTATS.JS -->
+    <script src="js/updateStats.js"></script>
 </head>
 
 <body>
     <div class="relative flex size-full min-h-screen flex-col bg-[#344E41] dark group/design-root overflow-x-hidden"
         style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
         <div class="layout-container flex h-full grow flex-col">
+            <!-- HEADER -->
             <header style="height: 10vh"
                 class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#588157] px-10 py-3 ">
                 <div class="flex items-center gap-4 text-[#DAD7CD] w-full text-center">
-                    <h2 class="text-[#DAD7CD] text-5xl font-bold leading-tight tracking-[-0.015em] w-full text-center">
+                    <h2 data-aos="fade-down" data-aos-duration="1500"
+                        class="text-[#DAD7CD] text-5xl font-bold leading-tight tracking-[-0.015em] w-full text-center">
                         Ghibiri Server
                         Monitor</h2>
                 </div>
                 <div class="flex flex-1 gap-8">
-                    <!-- <div class="flex items-center gap-9"> -->
-                    <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Dashboard</a> -->
-                    <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Logs</a> -->
-                    <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Settings</a> -->
-                    <!-- </div> -->
-                    <!-- <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmTYAhPhXqH3TIR0ZCHJ61wHeNPMVfEIKMURhSoE5GQEVHfGxTF5D3y3WGea18oaEAFxgX6ieeZvJLYTCij6U0BFvd2qVuiCAptuKJTY40V-r6fL5_JcDuoQytcZ_aAXBi8nGm1Xbf6t6We3l1CosmRoQIu_pWxo8mIW48jG4SgI-UM1owUHNnUkREVm8PN2P9ugYFXroz7PZauqNGPSUi2k3fc76jit8st8WcYdJUwKqRfyy5w1mc3W3wct29OG5KHWDB9q4tAGg");'>
-                    </div> -->
                 </div>
             </header>
+            <!-- INFORMAZIONI SERVER  -->
             <div class="px-40 flex flex-1 justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
                     <div class="flex flex-wrap justify-between gap-3">
                     </div>
+                    <!-- SEZIONE INFORMAZIONI GENERALI -->
                     <h3
                         class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4  text-center w-full">
                         Informazioni generali</h3>
-                    <div class="flex flex-wrap gap-4 p-4">
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                    <div class="flex flex-wrap gap-4 p-4" data-aos="zoom-in" data-aos-duration="3000">
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
                                     class="fa-solid fa-floppy-disk"></i> Uso del disco</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="diskusage">N/N
                             </p>
                         </div>
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
                             <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
                                     class="fa-solid fa-temperature-three-quarters"></i> Temperatura del processore
                             </p>
@@ -58,64 +67,85 @@
                             </p>
                         </div>
                     </div>
+                    <!-- SEZIONE STATISTICHE HARDWARE -->
                     <h3
                         class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center w-full">
                         Statistiche Hardware</h3>
-                    <div class="flex flex-wrap gap-4 p-4">
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-memory"></i> Uso RAM</p>
+                    <div class="flex flex-wrap gap-4 p-4" data-aos="zoom-in" data-aos-duration="3000">
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-memory"></i> Uso RAM</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ramusage">N/N
                             </p>
                         </div>
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-microchip"></i> Uso CPU</p>
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-microchip"></i> Uso CPU</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="cpuusage">N/N
                             </p>
                         </div>
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-stopwatch-20"></i> Tempo ultimo avvio</p>
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-stopwatch-20"></i> Tempo ultimo avvio</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="uptime">N/N
                             </p>
                         </div>
                     </div>
+                    <!-- SEZIONE STATISTICHE SOFTWARE -->
                     <h3
                         class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center w-full">
                         Statistiche Software</h3>
-                    <div class="flex flex-wrap gap-4 p-4">
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-brands fa-linux"></i> Sistema operativo</p>
+                    <div class="flex flex-wrap gap-4 p-4" data-aos="zoom-in" data-aos-duration="3000">
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-brands fa-linux"></i> Sistema operativo</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ossystem">N/N
                             </p>
                         </div>
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-tag"></i> Hostname</p>
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-tag"></i> Hostname</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="hostname">N/N
                             </p>
                         </div>
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-network-wired"></i> IP interno</p>
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-network-wired"></i> IP interno</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ip_interno">
                                 N/N
                             </p>
                         </div>
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157] text-center w-full">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-wifi"></i> IP esterno</p>
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157] text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-wifi"></i> IP esterno</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ip_esterno">
                                 N/N
                             </p>
                         </div>
                     </div>
+                    <!-- SEZIONE UTILIZZO RETE -->
                     <h3
                         class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center w-full">
                         Utilizzo rete</h3>
-                    <div class="flex flex-wrap gap-4 p-4">
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-arrow-down"></i> Ingresso</p>
+                    <div class="flex flex-wrap gap-4 p-4" data-aos="zoom-in" data-aos-duration="3000">
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-arrow-down"></i> Ingresso</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="conn-in">N/N
                             </p>
                         </div>
-                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-arrow-up"></i> Uscita</p>
+                        <div
+                            class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-arrow-up"></i> Uscita</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="conn-out">N/N
                             </p>
                         </div>
@@ -124,47 +154,21 @@
             </div>
         </div>
     </div>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        function updateStats() {
-            fetch("http://192.168.1.70:5000/api/system")
-                .then(res => res.json())
-                .then(data => {
-                    document.getElementById("diskusage").textContent = `${data.disk.percent}%`;
-                    // document.getElementById("cputemp").textContent = `${data.cpu_temp}%`;
-                    document.getElementById("cputemp").textContent = data.cpu_temp !== null ? `${data.cpu_temp}°C` : "N/D";
-
-
-                    document.getElementById("ramusage").textContent = `${data.memory.percent}%`;
-                    document.getElementById("cpuusage").textContent = `${data.cpu_percent}%`;
-                    document.getElementById("uptime").textContent = `${data.uptime}`;
-
-                    document.getElementById("ossystem").textContent = `${data.os}`;
-                    document.getElementById("hostname").textContent = `${data.hostname}`;
-
-                    document.getElementById("ip_interno").textContent = `${data.ip_interno}`;
-                    document.getElementById("ip_esterno").textContent = `${data.ip_esterno}`;
-
-                    document.getElementById("conn-in").textContent = `${data.network_bytes_recv}`;
-                    document.getElementById("conn-out").textContent = `${data.network_bytes_sent}`;
-
-                });
-
-        }
-
         setInterval(updateStats, 1000);
         updateStats(); // chiama subito una volta
 
 
+        AOS.init();
     </script>
+
 </body>
 
 <style>
-    * {
-        cursor: default !important;
-    }
-    .card-data:hover {
-        background-color: #476b59;
-    }
+
 </style>
 
 </html>

@@ -1,0 +1,7 @@
+* {
+  cursor: default !important;
+}
+
+.card-data:hover {
+  background-color: #476b59;
+}
