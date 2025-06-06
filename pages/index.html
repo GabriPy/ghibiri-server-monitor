@@ -17,18 +17,19 @@
 <body>
     <div class="relative flex size-full min-h-screen flex-col bg-[#344E41] dark group/design-root overflow-x-hidden"
         style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
-        <div class="layout-container flex h-full grow flex-col" >
-            <header  style="height: 10vh"
+        <div class="layout-container flex h-full grow flex-col">
+            <header style="height: 10vh"
                 class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#588157] px-10 py-3 ">
                 <div class="flex items-center gap-4 text-[#DAD7CD] w-full text-center">
-                    <h2 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] w-full text-center">Ghibiri Server
+                    <h2 class="text-[#DAD7CD] text-5xl font-bold leading-tight tracking-[-0.015em] w-full text-center">
+                        Ghibiri Server
                         Monitor</h2>
                 </div>
                 <div class="flex flex-1 gap-8">
                     <!-- <div class="flex items-center gap-9"> -->
-                        <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Dashboard</a> -->
-                        <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Logs</a> -->
-                        <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Settings</a> -->
+                    <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Dashboard</a> -->
+                    <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Logs</a> -->
+                    <!-- <a class="text-[#DAD7CD] text-sm font-medium leading-normal" href="#">Settings</a> -->
                     <!-- </div> -->
                     <!-- <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
                         style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmTYAhPhXqH3TIR0ZCHJ61wHeNPMVfEIKMURhSoE5GQEVHfGxTF5D3y3WGea18oaEAFxgX6ieeZvJLYTCij6U0BFvd2qVuiCAptuKJTY40V-r6fL5_JcDuoQytcZ_aAXBi8nGm1Xbf6t6We3l1CosmRoQIu_pWxo8mIW48jG4SgI-UM1owUHNnUkREVm8PN2P9ugYFXroz7PZauqNGPSUi2k3fc76jit8st8WcYdJUwKqRfyy5w1mc3W3wct29OG5KHWDB9q4tAGg");'>
@@ -37,70 +38,85 @@
             </header>
             <div class="px-40 flex flex-1 justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-                    <div class="flex flex-wrap justify-between gap-3 p-4">
-                        <div class="flex  text-center w-full flex-col gap-3">
-                            <p class="text-[#DAD7CD] tracking-light text-[32px] font-bold leading-tight">Server
-                                Dashboard
-                            </p>
-                            <p class="text-[#A3B18A] text-sm font-normal leading-normal">Controlla le prestazioni del
-                                tuo server in tempo reale.</p>
-                        </div>
+                    <div class="flex flex-wrap justify-between gap-3">
                     </div>
-                    <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4  text-center w-full">
+                    <h3
+                        class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4  text-center w-full">
                         Informazioni generali</h3>
                     <div class="flex flex-wrap gap-4 p-4">
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Uso del disco</p>
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-floppy-disk"></i> Uso del disco</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="diskusage">N/N
                             </p>
                         </div>
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Temperatura del processore
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i
+                                    class="fa-solid fa-temperature-three-quarters"></i> Temperatura del processore
                             </p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="cputemp">N/N
                             </p>
                         </div>
                     </div>
-                    <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center w-full">
+                    <h3
+                        class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center w-full">
                         Statistiche Hardware</h3>
                     <div class="flex flex-wrap gap-4 p-4">
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Uso RAM</p>
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-memory"></i> Uso RAM</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ramusage">N/N
                             </p>
                         </div>
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Uso CPU</p>
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-microchip"></i> Uso CPU</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="cpuusage">N/N
                             </p>
                         </div>
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Tempo ultimo avvio</p>
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-stopwatch-20"></i> Tempo ultimo avvio</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="uptime">N/N
                             </p>
                         </div>
                     </div>
-                    <h3 class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center w-full">
+                    <h3
+                        class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center w-full">
                         Statistiche Software</h3>
                     <div class="flex flex-wrap gap-4 p-4">
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Sistema operativo</p>
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-brands fa-linux"></i> Sistema operativo</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ossystem">N/N
                             </p>
                         </div>
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">Hostname</p>
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-tag"></i> Hostname</p>
                             <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="hostname">N/N
                             </p>
                         </div>
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">IP interno</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ossystem">N/N
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-network-wired"></i> IP interno</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ip_interno">
+                                N/N
                             </p>
                         </div>
-                        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]">
-                            <p class="text-[#DAD7CD] text-base font-medium leading-normal">IP esterno</p>
-                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="hostname">N/N
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157] text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-wifi"></i> IP esterno</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="ip_esterno">
+                                N/N
+                            </p>
+                        </div>
+                    </div>
+                    <h3
+                        class="text-[#DAD7CD] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center w-full">
+                        Utilizzo rete</h3>
+                    <div class="flex flex-wrap gap-4 p-4">
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-arrow-down"></i> Ingresso</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="conn-in">N/N
+                            </p>
+                        </div>
+                        <div class="card-data flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#588157]  text-center w-full">
+                            <p class="text-[#DAD7CD] text-base font-medium leading-normal"><i class="fa-solid fa-arrow-up"></i> Uscita</p>
+                            <p class="text-[#DAD7CD] tracking-light text-2xl font-bold leading-tight" id="conn-out">N/N
                             </p>
                         </div>
                     </div>
@@ -125,18 +141,12 @@
                     document.getElementById("ossystem").textContent = `${data.os}`;
                     document.getElementById("hostname").textContent = `${data.hostname}`;
 
+                    document.getElementById("ip_interno").textContent = `${data.ip_interno}`;
+                    document.getElementById("ip_esterno").textContent = `${data.ip_esterno}`;
 
-                    console.log(cpu_percent);
-                    console.log(cpu_cores);
-                    console.log(cpu_threads);
-                    console.log(memory);
-                    console.log(disk);
-                    console.log(os);
-                    console.log(os_version);
-                    console.log(hostname);
-                    console.log(load_avg);
-                    console.log(uptime);
-                    console.log(cpu_temp);
+                    document.getElementById("conn-in").textContent = `${data.network_bytes_sent}`;
+                    document.getElementById("conn-out").textContent = `${data.network_bytes_recv}`;
+
                 });
 
         }
@@ -147,5 +157,14 @@
 
     </script>
 </body>
+
+<style>
+    * {
+        cursor: default !important;
+    }
+    .card-data:hover {
+        background-color: #476b59;
+    }
+</style>
 
 </html>
